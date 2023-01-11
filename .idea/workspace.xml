@@ -1,52 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f471c73b-ae56-457f-9292-132557dd055b" name="Changes" comment="category, institution, donation models">
-      <change afterPath="$PROJECT_DIR$/application/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="f471c73b-ae56-457f-9292-132557dd055b" name="Changes" comment="template fixes">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/about-us.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/about-us.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/decoration.svg" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/decoration.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/footer-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/footer-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/form-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/form-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/header-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/header-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/header-form-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/header-form-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/icon-arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/icon-arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/icon-bag.png" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/icon-bag.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/icon-courier.png" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/icon-courier.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/icon-facebook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/icon-facebook.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/icon-gear.png" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/icon-gear.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/icon-glasses.png" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/icon-glasses.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/icon-hand.png" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/icon-hand.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/icon-hands.png" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/icon-hands.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/icon-instagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/icon-instagram.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/signature.svg" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/signature.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/stats-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/images/stats-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/modules/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/modules/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/modules/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/modules/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/modules/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/modules/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/modules/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/modules/_forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/modules/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/modules/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/modules/_navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/modules/_navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/modules/_stats.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/modules/_stats.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/modules/homepage-sections/_about-us.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/modules/homepage-sections/_about-us.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/modules/homepage-sections/_help.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/modules/homepage-sections/_help.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/modules/homepage-sections/_steps.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/modules/homepage-sections/_steps.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/partials/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/partials/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/partials/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/partials/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scss/vendor/_normalize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/application/static/scss/vendor/_normalize.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form-confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form-confirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,21 +39,28 @@
     <option name="showMembers" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/eliasz/Desktop/SecondHand/templates&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/eliasz/Desktop/SecondHand/templates",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/application" />
       <recent name="$PROJECT_DIR$/application" />
     </key>
   </component>
@@ -133,7 +99,7 @@
       <updated>1673434720597</updated>
       <workItem from="1673434732963" duration="1954000" />
       <workItem from="1673438763229" duration="917000" />
-      <workItem from="1673439726839" duration="6604000" />
+      <workItem from="1673439726839" duration="10518000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1673435535955</created>
@@ -170,7 +136,49 @@
       <option name="project" value="LOCAL" />
       <updated>1673443992078</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="urls">
+      <created>1673446679951</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673446679951</updated>
+    </task>
+    <task id="LOCAL-00007" summary="account model fixes">
+      <created>1673446711868</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673446711868</updated>
+    </task>
+    <task id="LOCAL-00008" summary="views">
+      <created>1673446732840</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673446732840</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixes">
+      <created>1673446763847</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673446763847</updated>
+    </task>
+    <task id="LOCAL-00010" summary="static">
+      <created>1673446784866</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673446784866</updated>
+    </task>
+    <task id="LOCAL-00011" summary="template fixes">
+      <created>1673446893207</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673446893207</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +200,12 @@
     <MESSAGE value="static files and templates" />
     <MESSAGE value="custom user model and admin site" />
     <MESSAGE value="category, institution, donation models" />
-    <option name="LAST_COMMIT_MESSAGE" value="category, institution, donation models" />
+    <MESSAGE value="urls" />
+    <MESSAGE value="account model fixes" />
+    <MESSAGE value="views" />
+    <MESSAGE value="fixes" />
+    <MESSAGE value="static" />
+    <MESSAGE value="template fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="template fixes" />
   </component>
 </project>
