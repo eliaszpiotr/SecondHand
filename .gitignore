@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 SecondHand/settings.py
+application/migrations
 # C extensions
 *.so
 
