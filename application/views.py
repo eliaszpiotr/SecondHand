@@ -4,21 +4,21 @@ from django.views import View
 
 class LandingPage(View):
     def get(self, request):
-        return render(request, 'index.html')
+        return render(request, 'application/index.html')
 
 
 class AddDonation(View):
     def get(self, request):
-        return render(request, 'form.html')
+        return render(request, 'application/form.html')
 
 
 class Login(View):
     def get(self, request):
-        return render(request, 'login.html')
+        return render(request, 'application/login.html')
 
 
 class Register(View):
     def get(self, request):
-        return render(request, 'register.html')
+        return render(request, 'application/register.html')
 
 
