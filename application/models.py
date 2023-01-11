@@ -1,10 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.contrib.auth.models import AbstractUser, BaseUserManager, AbstractBaseUser
 from datetime import datetime
 
 
 class MyAccountManager(BaseUserManager):
-    def create_user(self, email, first_name, last_name, password=None):
+    def create_user(self, email, password=None):
         if not email:
             raise ValueError('Users must have an email address')
         # if not first_name:
@@ -21,9 +21,9 @@ class MyAccountManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, first_name, last_name, password=None):
+    def create_superuser(self, email, password=None):
         user = self.create_user(
-            email=self.normailize_email(email),
+            email=self.normalize_email(email),
             password=password,
             # first_name=first_name,
             # last_name=last_name,
@@ -35,7 +35,7 @@ class MyAccountManager(BaseUserManager):
         user.save(using=self._db)
 
 
-class Account(AbstractUser):
+class Account(AbstractBaseUser):
     username = None
     email = models.EmailField(verbose_name='email', unique=True, max_length=64)
     first_name = models.CharField(verbose_name='first name', max_length=50)
