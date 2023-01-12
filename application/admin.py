@@ -6,7 +6,7 @@ from .models import Account, Donation, Institution, Category
 @admin.register(Account)
 class AccountAdmin(UserAdmin):
     ordering = ('email',)
-    list_display = ('email', 'first_name', 'last_name', 'date_joined', 'last_login', 'is_admin', 'is_staff')
+    list_display = ('email', 'first_name', 'last_name', 'date_joined', 'last_login', 'is_staff')
     search_fields = ('email', 'first_name', 'last_name')
     readonly_fields = ('date_joined', 'last_login')
 

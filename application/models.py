@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, BaseUserManager, AbstractBaseUser
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 from datetime import datetime
 
 
@@ -7,15 +7,9 @@ class MyAccountManager(BaseUserManager):
     def create_user(self, email, password=None):
         if not email:
             raise ValueError('Users must have an email address')
-        # if not first_name:
-        #     raise ValueError('Users must have a first name')
-        # if not last_name:
-        #     raise ValueError('Users must have a last name')
 
         user = self.model(
             email=self.normalize_email(email),
-            # first_name=first_name,
-            # last_name=last_name,
         )
         user.set_password(password)
         user.save(using=self._db)
@@ -25,29 +19,20 @@ class MyAccountManager(BaseUserManager):
         user = self.create_user(
             email=self.normalize_email(email),
             password=password,
-            # first_name=first_name,
-            # last_name=last_name,
         )
 
-        user.is_admin = True
         user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)
 
 
-class Account(AbstractBaseUser):
+class Account(AbstractUser):
     username = None
     email = models.EmailField(verbose_name='email', unique=True, max_length=64)
-    first_name = models.CharField(verbose_name='first name', max_length=50)
-    last_name = models.CharField(verbose_name='last name', max_length=50)
-    is_admin = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
-    is_superuser = models.BooleanField(default=False)
-    date_joined = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
-    last_login = models.DateTimeField(verbose_name='last login', auto_now=True)
 
     USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+    # sprawdzic!!!
     # REQUIRED_FIELDS = ['first_name', 'last_name']
 
     objects = MyAccountManager()
@@ -56,7 +41,7 @@ class Account(AbstractBaseUser):
         return self.email
 
     def has_perm(self, perm, obj=None):
-        return self.is_admin
+        return self.is_staff
 
     def has_module_perms(self, app_label):
         return True
