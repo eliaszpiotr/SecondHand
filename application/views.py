@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-
-from application.models import Donation
+from application.models import Donation, Institution, Category
 
 
 class LandingPage(View):
@@ -13,9 +12,15 @@ class LandingPage(View):
         for donation in donations:
             bags += donation.quantity
         organizations = Donation.objects.values('institution').distinct().count()
+        foundations = Institution.objects.all().filter(type='Foundation')
+        non_gov_orgs = Institution.objects.all().filter(type='Non-governmental organization')
+        local_collections = Institution.objects.all().filter(type='Local collection')
         context = {
             'bags': bags,
             'organizations': organizations,
+            'foundations': foundations,
+            'non_gov_orgs': non_gov_orgs,
+            'local_collections': local_collections,
         }
         return render(request, 'application/index.html', context)
 
