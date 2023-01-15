@@ -35,14 +35,22 @@
 {% block content %}
     <section class="login-page">
         <h2>Login</h2>
-        <form method="post" action="">{% csrf_token %}
-             {% for field in form %}
-            <div class="form-group">
-                {{ field }}
-            {% if field.help_text == 'password' %}
-                <a href="#" class="btn btn--small btn--without-border reset-password">Forgot password?</a>
-            {% endif %}
-            </div>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="error">
+                            {% for error in field.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% if field.help_text == 'password' %}
+                        <a href="#" class="btn btn--small btn--without-border reset-password">Forgot password?</a>
+                    {% endif %}
+                </div>
             {% endfor %}
 
             <div class="form-group form-group--buttons">

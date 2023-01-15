@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from application.models import CustomUser
+from django.contrib.auth import get_user_model
 
 
 class CustomUserRegisterForm(UserCreationForm):
@@ -21,4 +22,20 @@ class CustomUserRegisterForm(UserCreationForm):
         if CustomUser.objects.filter(email=email).exists():
             raise forms.ValidationError("A user with that email already exists.")
         return email
+
+
+class CustomUserLoginForm(AuthenticationForm):
+    username = forms.EmailField(widget=forms.TextInput(attrs={'class': 'validate', 'placeholder': 'Email'}), label='')
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}), label='', help_text='password')
+
+    class Meta:
+        model = get_user_model()
+        fields = ('email', 'password')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not CustomUser.objects.filter(email=email).exists():
+            raise forms.ValidationError("A user with that email does not exist.")
+        return email
+
 

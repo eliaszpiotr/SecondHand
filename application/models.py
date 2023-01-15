@@ -44,6 +44,8 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']
 
+    backend = 'django.contrib.auth.backends.ModelBackend'
+
     def __str__(self):
         return self.email
 

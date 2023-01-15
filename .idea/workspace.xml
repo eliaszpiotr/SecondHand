@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f471c73b-ae56-457f-9292-132557dd055b" name="Changes" comment="rebuilding custom user model">
+    <list default="true" id="f471c73b-ae56-457f-9292-132557dd055b" name="Changes" comment="fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/templates/application/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/templates/application/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/templates/application/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/templates/application/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673551769400</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixes">
+      <created>1673792473570</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673792473570</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,13 +245,13 @@
     <MESSAGE value="urls" />
     <MESSAGE value="account model fixes" />
     <MESSAGE value="views" />
-    <MESSAGE value="fixes" />
     <MESSAGE value="static" />
     <MESSAGE value="template fixes" />
     <MESSAGE value="admin panel" />
     <MESSAGE value="correcting templates" />
     <MESSAGE value="rebuilding custom user model" />
     <MESSAGE value="fixes in templates and organisations display" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes in templates and organisations display" />
+    <MESSAGE value="fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
   </component>
 </project>

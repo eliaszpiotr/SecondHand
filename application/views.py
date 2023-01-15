@@ -1,3 +1,5 @@
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
@@ -5,12 +7,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.auth import login, logout, authenticate
 from django.views.generic import CreateView
 from application.models import Donation, Institution, Category, CustomUser, CustomUserManager
-from application.forms import CustomUserRegisterForm
+from application.forms import CustomUserRegisterForm, CustomUserLoginForm
 
 
 class LandingPage(View):
 
     def get(self, request):
+        """
+        This method is responsible for rendering the home page.
+        """
         bags = 0
         donations = Donation.objects.all()
         for donation in donations:
@@ -31,18 +36,17 @@ class LandingPage(View):
 
 class AddDonation(LoginRequiredMixin, View):
     def get(self, request):
-        return render(request, 'application/form.html')
+        categories = Category.objects.all()
+        context = {
+            'categories': categories,
+        }
+
+        return render(request, 'application/form.html', context)
 
 
 class ConfirmDonation(View):
     def get(self, request):
         return render(request, 'application/form-confirmation.html')
-
-
-class Logout(View):
-    def get(self, request):
-        logout(request)
-        return redirect('index')
 
 
 class Register(CreateView):
@@ -57,8 +61,25 @@ class Register(CreateView):
         return response
 
 
-class Login(View):
-    def get(self, request):
-        return render(request, 'login.html')
+class Login(LoginView):
+    template_name = 'application/login.html'
+    form_class = CustomUserLoginForm
+
+    def form_valid(self, form):
+        user = form.get_user()
+        if not user:
+            return redirect('register')
+        # Log custom information about the user here
+        return super().form_valid(form)
+
+
+class Logout(LogoutView):
+    template_name = 'application/index.html'
+    success_url = reverse_lazy('index')
+
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return redirect('index')
+
 
 
