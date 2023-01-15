@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Account, Donation, Institution, Category
+from .models import CustomUser, Donation, Institution, Category
 
 
-@admin.register(Account)
+@admin.register(CustomUser)
 class AccountAdmin(UserAdmin):
     ordering = ('email',)
     list_display = ('email', 'first_name', 'last_name', 'date_joined', 'last_login', 'is_staff')

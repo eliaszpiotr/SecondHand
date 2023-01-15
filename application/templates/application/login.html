@@ -22,7 +22,8 @@
                 <li><a href="{% url 'index' %}" class="btn btn--without-border active">Start</a></li>
                 <li><a href="{% url 'index' %}#steps" class="btn btn--without-border">How it works?</a></li>
                 <li><a href="{% url 'index' %}#about-us" class="btn btn--without-border">About us</a></li>
-                <li><a href="{% url 'index' %}#help" class="btn btn--without-border">Foundations and organisations</a></li>
+                <li><a href="{% url 'index' %}#help" class="btn btn--without-border">Foundations and organisations</a>
+                </li>
                 <li><a href="{% url 'add_donation' %}" class="btn btn--without-border">Donate now!</a></li>
                 <li><a href="#contact" class="btn btn--without-border">Contact</a></li>
             </ul>
@@ -34,18 +35,19 @@
 {% block content %}
     <section class="login-page">
         <h2>Login</h2>
-        <form>
+        <form method="post" action="">{% csrf_token %}
+             {% for field in form %}
             <div class="form-group">
-                <input type="email" name="email" placeholder="Email"/>
-            </div>
-            <div class="form-group">
-                <input type="password" name="password" placeholder="Password"/>
+                {{ field }}
+            {% if field.help_text == 'password' %}
                 <a href="#" class="btn btn--small btn--without-border reset-password">Forgot password?</a>
+            {% endif %}
             </div>
+            {% endfor %}
 
             <div class="form-group form-group--buttons">
-                <a href="{% url 'register' %}" class="btn btn--without-border">Create an account</a>
                 <button class="btn" type="submit">Login</button>
+                <a href="{% url 'register' %}" class="btn btn--without-border">Create an account</a>
             </div>
         </form>
     </section>

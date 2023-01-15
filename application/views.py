@@ -1,7 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from application.models import Donation, Institution, Category
+from django.contrib.auth import login, logout, authenticate
+from django.views.generic import CreateView
+from application.models import Donation, Institution, Category, CustomUser, CustomUserManager
+from application.forms import CustomUserRegisterForm
 
 
 class LandingPage(View):
@@ -35,13 +39,26 @@ class ConfirmDonation(View):
         return render(request, 'application/form-confirmation.html')
 
 
+class Logout(View):
+    def get(self, request):
+        logout(request)
+        return redirect('index')
+
+
+class Register(CreateView):
+    model = CustomUser
+    form_class = CustomUserRegisterForm
+    template_name = 'application/register.html'
+    success_url = reverse_lazy('index')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        login(self.request, self.object)
+        return response
+
+
 class Login(View):
     def get(self, request):
-        return render(request, 'application/login.html')
-
-
-class Register(View):
-    def get(self, request):
-        return render(request, 'application/register.html')
+        return render(request, 'login.html')
 
 

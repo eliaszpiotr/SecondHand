@@ -1624,7 +1624,7 @@ footer .bottom-line--icons a img {
 
 /* line 31, scss/style.scss */
 .login-page form .reset-password {
-  float: right;
+  float: left;
   margin-top: 20px;
   font-size: 1.4rem;
 }
