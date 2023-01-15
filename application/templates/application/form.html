@@ -87,55 +87,16 @@
             <div data-step="1" class="active">
                 <h3>Select what you want to give back:</h3>
 
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input
-                                type="checkbox"
-                                name="categories"
-                                value="clothes-to-use"
-                        />
-                        <span class="checkbox"></span>
-                        <span class="description">
-                            clothes that can be reused
-                        </span>
-                    </label>
-                </div>
+                {% for category in categories %}
+                    <div class="form-group form-group--checkbox">
+                        <label>
+                            <input type="checkbox" name="categories" value="{{ category.name }}"/>
+                            <span class="checkbox"></span>
+                            <span class="description">{{ category }}</span>
+                        </label>
+                    </div>
+                {% endfor %}
 
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input
-                                type="checkbox"
-                                name="categories"
-                                value="clothes-useless"
-                        />
-                        <span class="checkbox"></span>
-                        <span class="description">clothes to throw away</span>
-                    </label>
-                </div>
-
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input type="checkbox" name="categories" value="toys"/>
-                        <span class="checkbox"></span>
-                        <span class="description">toys</span>
-                    </label>
-                </div>
-
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input type="checkbox" name="categories" value="books"/>
-                        <span class="checkbox"></span>
-                        <span class="description">books</span>
-                    </label>
-                </div>
-
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input type="checkbox" name="categories" value="other"/>
-                        <span class="checkbox"></span>
-                        <span class="description">others</span>
-                    </label>
-                </div>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn next-step">Next</button>
@@ -149,7 +110,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         How many kilograms:
-                        <input type="number" name="bags" step="1" min="1"/>
+                        <input type="number" name="kilograms" step="1" min="1"/>
                     </label>
                 </div>
 
@@ -163,20 +124,20 @@
             <!-- STEP 4 -->
             <div data-step="3">
                 <h3>Select the organization you want to help:</h3>
-
+                {% for organisation in organisations %}
                 <div class="form-group form-group--checkbox">
                     <label>
                         <input type="radio" name="organization" value="old"/>
                         <span class="checkbox radio"></span>
                         <span class="description">
-                  <div class="title">Fundacja “Bez domu”</div>
+                  <div class="title">{{ organisation.name }}</div>
                   <div class="subtitle">
-                    Cel i misja: Pomoc dla osób nie posiadających miejsca
-                    zamieszkania
+                    {{ organisation.description }}
                   </div>
                 </span>
                     </label>
                 </div>
+                {% endfor %}
 
 
                 <div class="form-group form-group--buttons">
