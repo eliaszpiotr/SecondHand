@@ -65,14 +65,17 @@ class Register(CreateView):
 
 class Login(LoginView):
     template_name = 'application/login.html'
-    form_class = CustomUserLoginForm
+    authentication_form = CustomUserLoginForm
+    redirect_authenticated_user = True
 
     def form_valid(self, form):
         user = form.get_user()
-        if not user:
-            return redirect('register')
+        login(self.request, user)
         # Log custom information about the user here
         return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('index')
 
 
 class Logout(LogoutView):
