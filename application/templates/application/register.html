@@ -1,31 +1,9 @@
+{% extends 'application/index.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-</head>
-<body>
-{% block nav %}
-    <header>
-        <nav class="container container--70">
-            <ul class="nav--actions">
-                <li><a href="{% url 'login' %}">Login</a></li>
-                <li class="highlighted"><a href="{% url 'register' %}">Create an account!</a></li>
-            </ul>
 
-            <ul>
-                <li><a href="{% url 'index' %}" class="btn btn--without-border active">Start</a></li>
-                <li><a href="{% url 'index' %}#steps" class="btn btn--without-border">How it works?</a></li>
-                <li><a href="{% url 'index' %}#about-us" class="btn btn--without-border">About us</a></li>
-                <li><a href="{% url 'index' %}#help" class="btn btn--without-border">Foundations and organisations</a></li>
-                <li><a href="{% url 'add_donation' %}" class="btn btn--without-border">Donate now!</a></li>
-                <li><a href="#contact" class="btn btn--without-border">Contact</a></li>
-            </ul>
-        </nav>
+{% block head %}
+    <header>
+        {% include 'application/nav.html' %}
     </header>
 {% endblock %}
 
@@ -49,40 +27,7 @@
     </section>
 {% endblock %}
 
-<footer>
-    <div id="contact" class="contact">
-        <h2>Contact with us!</h2>
-        <h3>Contact form</h3>
-        <form class="form--contact">
-            <div class="form-group form-group--50">
-                <input type="text" name="name" placeholder="First name"/>
-            </div>
-            <div class="form-group form-group--50">
-                <input type="text" name="surname" placeholder="Last name"/>
-            </div>
-
-            <div class="form-group">
-            <textarea
-                    name="message"
-                    placeholder="Your message"
-                    rows="1"
-            ></textarea>
-            </div>
-
-            <button class="btn" type="submit">Send</button>
-        </form>
-    </div>
-    <div class="bottom-line">
-        <span class="bottom-line--copy">Copyright &copy; 2023</span>
-        <div class="bottom-line--icons">
-            <a href="#" class="btn btn--small"><img src="{% static 'images/icon-facebook.svg' %}"/></a>
-            <a href="#" class="btn btn--small"><img src="{% static 'images/icon-instagram.svg' %}"/></a>
-        </div>
-    </div>
-</footer>
+{% include 'application/footer.html' %}
 
 <script src="{% static 'js/app.js' %}"></script>
 
-
-</body>
-</html>

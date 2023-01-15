@@ -1,33 +1,9 @@
 {% extends 'application/index.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-</head>
-<body>
-{% block nav %}
-    <header>
-        <nav class="container container--70">
-            <ul class="nav--actions">
-                <li><a href="{% url 'login' %}">Login</a></li>
-                <li class="highlighted"><a href="{% url 'register' %}">Create an account!</a></li>
-            </ul>
 
-            <ul>
-                <li><a href="{% url 'index' %}" class="btn btn--without-border active">Start</a></li>
-                <li><a href="{% url 'index' %}#steps" class="btn btn--without-border">How it works?</a></li>
-                <li><a href="{% url 'index' %}#about-us" class="btn btn--without-border">About us</a></li>
-                <li><a href="{% url 'index' %}#help" class="btn btn--without-border">Foundations and organisations</a>
-                </li>
-                <li><a href="{% url 'add_donation' %}" class="btn btn--without-border">Donate now!</a></li>
-                <li><a href="#contact" class="btn btn--without-border">Contact</a></li>
-            </ul>
-        </nav>
+{% block head %}
+    <header>
+        {% include 'application/nav.html' %}
     </header>
 {% endblock %}
 
@@ -35,7 +11,7 @@
 {% block content %}
     <section class="login-page">
         <h2>Login</h2>
-        <form method="post">
+        <form method="post" >
             {% csrf_token %}
             {% for field in form %}
                 <div class="form-group">
@@ -61,5 +37,3 @@
     </section>
 {% endblock %}
 
-</body>
-</html>

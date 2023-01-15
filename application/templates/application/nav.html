@@ -1,0 +1,33 @@
+<nav class="container container--70">
+    {% if user.is_authenticated %}
+        <ul class="nav--actions">
+            <li class="logged-user">
+                Hello {{ user.first_name }}
+                <ul class="dropdown">
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">My donation</a></li>
+                    {% if user.is_superuser %}
+                        <li><a href="http://127.0.0.1:8000/admin">Admin panel</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    {% else %}
+        <ul class="nav--actions">
+            <li><a href="{% url 'login' %}" class="btn btn--small btn--without-border">Login</a></li>
+            <li><a href="{% url 'register' %}" class="btn btn--small btn--highlighted">Create an account</a>
+            </li>
+        </ul>
+    {% endif %}
+
+
+    <ul>
+        <li><a href="{% url 'index' %}" class="btn btn--without-border active">Start</a></li>
+        <li><a href="#steps" class="btn btn--without-border">How it works?</a></li>
+        <li><a href="#about-us" class="btn btn--without-border">About us</a></li>
+        <li><a href="#help" class="btn btn--without-border">Foundations and organisations</a></li>
+        <li><a href="{% url 'add_donation' %}" class="btn btn--without-border">Donate now!</a></li>
+        <li><a href="#contact" class="btn btn--without-border">Contact</a></li>
+    </ul>
+</nav>
