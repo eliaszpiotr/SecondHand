@@ -1,0 +1,28 @@
+{% extends 'application/index.html' %}
+{% load static %}
+
+
+{% block head %}
+    <header>
+        {% include 'application/nav.html' %}
+    </header>
+{% endblock %}
+
+{% block content %}
+    <section>
+    <div class="slogan container container--90">
+            <div class="slogan--item">
+                <h1>
+                    {{ user.first_name }} {{ user.last_name }}
+                </h1>
+                <p>
+                    {{ user.email }}
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

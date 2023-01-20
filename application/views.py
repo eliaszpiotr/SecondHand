@@ -1,12 +1,11 @@
 from django.contrib.auth.views import LoginView, LogoutView
-from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import login, logout
 from django.views.generic import CreateView
-from application.models import Donation, Institution, Category, CustomUser, CustomUserManager
+from application.models import Donation, Institution, Category, CustomUser
 from application.forms import CustomUserRegisterForm, CustomUserLoginForm
 
 
@@ -65,13 +64,12 @@ class Register(CreateView):
 
 class Login(LoginView):
     template_name = 'application/login.html'
-    authentication_form = CustomUserLoginForm
+    form_class = CustomUserLoginForm
     redirect_authenticated_user = True
 
     def form_valid(self, form):
         user = form.get_user()
         login(self.request, user)
-        # Log custom information about the user here
         return super().form_valid(form)
 
     def get_success_url(self):
@@ -85,6 +83,18 @@ class Logout(LogoutView):
     def get(self, request, *args, **kwargs):
         logout(request)
         return redirect('index')
+
+
+class Profile(LoginRequiredMixin, View):
+    def get(self, request):
+        user = request.user
+        donations = Donation.objects.all().filter(user=request.user)
+        context = {
+            'donations': donations,
+            'user': user,
+        }
+        return render(request, 'application/profile.html', context)
+
 
 
 
